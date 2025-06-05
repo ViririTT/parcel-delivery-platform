@@ -1,0 +1,47 @@
+To run PATISA Transit locally, you'll need to set up a few things. Let me guide you through the process:
+
+Prerequisites You'll Need:
+Node.js 18+ installed on your machine
+PostgreSQL database (local or cloud)
+API credentials for external services
+Quick Local Setup Steps:
+1. Download Project Files
+First, download all the project files from this environment to a folder on your local machine called patisa-transit.
+
+2. Install Dependencies
+Open terminal in the project folder and run:
+
+npm install
+3. Set Up Environment Variables
+Copy the .env.example file to .env and fill in your actual values:
+
+# Database - You'll need a PostgreSQL instance
+DATABASE_URL=postgresql://username:password@localhost:5432/patisa_transit
+# Session security - Generate a random string
+SESSION_SECRET=your-long-random-secret-key
+# For payments - Get from Stripe dashboard
+STRIPE_SECRET_KEY=sk_test_your_key
+VITE_STRIPE_PUBLIC_KEY=pk_test_your_key
+# For SMS - Get from Twilio console
+TWILIO_ACCOUNT_SID=your_sid
+TWILIO_AUTH_TOKEN=your_token
+TWILIO_PHONE_NUMBER=+1234567890
+4. Database Setup
+Run this to create the database tables:
+
+npm run db:push
+5. Start Development Server
+npm run dev
+The application will be available at http://localhost:5000
+
+What You Need to Get:
+For the database: You can either install PostgreSQL locally or use a free cloud service like:
+
+Neon.tech (recommended for quick setup)
+Supabase
+Railway
+For payments: Create a free Stripe account at stripe.com and get your test API keys
+
+For SMS notifications: Create a free Twilio account and get your credentials
+
+Would you like me to help you with any specific part of this setup? For example, I can guide you through getting the Stripe or Twilio credentials, or help you set up a cloud database.
